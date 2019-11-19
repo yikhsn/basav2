@@ -1,0 +1,1 @@
+export const SET_WORD = 'SET_WORD';
