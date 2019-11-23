@@ -28,16 +28,15 @@ const styles = StyleSheet.create({
         height: (width - 16) / 4,
         width: (width - 16) / 4,
         margin: 1,
-        // borderWidth: 1,
-        // borderColor: '#eaeaea',
         justifyContent: 'center',
         alignItems: 'center'
     },
     letter: {
-        // fontSize: 40,
+        fontFamily: 'OpenSans-Regular',
         color: '#00C749'
     },
     description:{
+        fontFamily: 'OpenSans-Regular',
         fontSize: 11,
         color: '#666666'
     }
