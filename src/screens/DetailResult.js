@@ -1,17 +1,27 @@
 import React, { Component } from 'react';
 import {
     View,
+    ScrollView,
     Text,
     StyleSheet
 } from 'react-native';
 import MainResult from '../components/MainResult/MainResult';
+import SingleWordResult from '../components/SingleWordResult/SingleWordResult';
 
 class DetailResult extends Component{
     render(){
         return(
-            <View style={styles.container}>
+            <ScrollView style={styles.container}>
                 <MainResult />
-            </View>
+                <SingleWordResult
+                    kata="ambong"
+                    jenisKata="kata benda"
+                />
+                <SingleWordResult
+                    kata="ambong"
+                    jenisKata="kata benda"
+                />
+            </ScrollView>
         )
     }
 }

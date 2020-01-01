@@ -11,6 +11,7 @@ const MainResult = props => {
             <Text style={styles.mainText}>Ambong</Text>
 
             <View style={styles.resultBox}>
+                
                 <View style={styles.descriprionContainer}>
                     <View style={styles.descriprionNumberContainer}>
                         <Text style={styles.descriprionNumber}>1</Text>
@@ -30,6 +31,7 @@ const MainResult = props => {
                         <Text style={styles.translate}>Keranjang</Text>
                     </View>
                 </View>
+
             </View>
 
 
@@ -54,8 +56,6 @@ const MainResult = props => {
                     </View>
                 </View>
             </View>
-            
-
         </View>
     )
 }
@@ -64,7 +64,8 @@ const styles = StyleSheet.create({
     container: {
         backgroundColor: '#ffffff',
         paddingVertical: 10,
-        paddingHorizontal: 20
+        paddingHorizontal: 20,
+        marginBottom: 10
     },
     mainText: {
         fontFamily: 'Vollkorn-Bold',

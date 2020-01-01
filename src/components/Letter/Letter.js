@@ -10,14 +10,14 @@ import {
 
 const { height, width } = Dimensions.get('window');
 
-const Letter = props => {
+const Letter = props => {    
     return(
         <TouchableOpacity 
             style={styles.container}
             onPress={ () => props.navigation.navigate(props.nextScreen) }
         >
             <Text style={ [styles.letter, { fontSize: props.size }]}>{props.letter}</Text>
-            <Text style={styles.description}>400 kata - {props.letter}</Text>
+            <Text style={styles.description}>400 kata</Text>
         </TouchableOpacity>
     )
 }
