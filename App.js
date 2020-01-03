@@ -12,8 +12,6 @@ import { createStore } from 'redux';
 import appReducer from './src/store/appReducer';
 import AppNavigator from './AppNavigator';
 
-import Home from './src/screens/HomeNavigation';
-
 const store = createStore(appReducer);
 
 export default class App extends Component{
@@ -25,7 +23,3 @@ export default class App extends Component{
     )
   }
 }
-
-const styles = StyleSheet.create({
-  
-});

@@ -27,7 +27,7 @@ const SingleWordResult = (props) => {
                     ]}
                 />
 
-                {/* <ArtiBox 
+                <ArtiBox 
                     title="Arti Kata"
                     text={['Satu', 'Dua', 'Tiga']}
                 />
@@ -49,7 +49,7 @@ const SingleWordResult = (props) => {
                             arti: "Siapa lelaki itu menggunakan keranjang seperti Gayo"
                         }
                     ]}
-                /> */}
+                />
 
             </View>
         </View>

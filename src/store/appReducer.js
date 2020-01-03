@@ -1,8 +1,7 @@
-import { combineReducers } from 'redux';
 import * as actionTypes from './actionTypes';
 
 const initialState = {
-    word : null
+    words : null
 }
 
 const appReducer = (state = initialState, action) => {

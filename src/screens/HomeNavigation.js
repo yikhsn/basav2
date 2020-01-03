@@ -9,6 +9,10 @@ import {
 
 import Letters from '../components/Letters/Letters';
 
+import * as actionCreators from '../store/actionCreator';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
 class Home extends Component {
     render(){
 
@@ -60,5 +64,16 @@ const styles = StyleSheet.create({
         backgroundColor: '#eaeaea',
         // padding: 2,
     }
-})
-export default Home;
+});
+
+const mapStateToProps = state => {
+    return {
+        datas: state
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return bindActionCreators(actionCreators, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

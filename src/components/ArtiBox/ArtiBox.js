@@ -12,9 +12,9 @@ const ArtiBox = props => {
             <Text style={styles.title}>{props.title}</Text>
             
             {
-                props.text.map( txt => (
+                props.text.map( (txt, index) => (
                     <Text 
-                        key={txt}   
+                        key={index}   
                         style={styles.text}
                     >
                         {txt}

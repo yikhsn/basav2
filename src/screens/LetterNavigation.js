@@ -6,8 +6,11 @@ import {
     StyleSheet
 } from 'react-native';
 import Letters from '../components/Letters/Letters';
+import * as actionCreators from '../store/actionCreator';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
-export default class SingleLetter extends Component{
+class SingleLetter extends Component{
     render(){
 
         const letters = [
@@ -57,5 +60,16 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#eaeaea',
     },
+});
 
-})
+const mapStateToProps = state => {
+    return {
+        datas: state
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return bindActionCreators(actionCreators, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SingleLetter);

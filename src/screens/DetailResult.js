@@ -8,6 +8,10 @@ import {
 import MainResult from '../components/MainResult/MainResult';
 import SingleWordResult from '../components/SingleWordResult/SingleWordResult';
 
+import * as actionCreators from '../store/actionCreator';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
 class DetailResult extends Component{
     render(){
         return(
@@ -34,6 +38,16 @@ const styles = StyleSheet.create({
     },
 
 
-})
+});
 
-export default DetailResult;
+const mapStateToProps = state => {
+    return {
+        datas: state
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return bindActionCreators(actionCreators, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(DetailResult);

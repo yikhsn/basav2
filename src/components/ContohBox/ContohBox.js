@@ -14,7 +14,7 @@ const ContohBox = props => {
             {
                 props.text.map( (txt, index) => (
                     <View
-                        key={txt.kalimat} 
+                        key={index} 
                         style={styles.box}
                     >
                         <Text style={styles.kalimat}>"{txt.kalimat}"</Text>

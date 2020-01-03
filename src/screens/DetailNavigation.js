@@ -5,8 +5,11 @@ import {
     Text,
     StyleSheet
 } from 'react-native';
-
 import WordList from '../components/WordList/WordList';
+
+import * as actionCreators from '../store/actionCreator';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 class DetailLetter extends Component{
     render(){
@@ -52,4 +55,14 @@ const styles = StyleSheet.create({
     }
 });
 
-export default DetailLetter;
+const mapStateToProps = state => {
+    return {
+        datas: state
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return bindActionCreators(actionCreators, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(DetailLetter);
