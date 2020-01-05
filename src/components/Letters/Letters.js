@@ -13,6 +13,7 @@ export default class Letters extends Component{
                     <Letter
                         key={letter.letter}
                         letter={letter.letter}
+                        desc={letter.desc}
                         navigation={nvgt}
                         size={sz}
                         nextScreen={nxt}

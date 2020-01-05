@@ -7,36 +7,75 @@ import {
 } from 'react-native';
 import WordList from '../components/WordList/WordList';
 
+import axios from '../axios/axios';
+
 import * as actionCreators from '../store/actionCreator';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 class DetailLetter extends Component{
+  
+    state = {
+        parentLetter: '',
+        wordList: [
+
+        ]
+    }
+
+    // contohObject = {
+    //     wordList: [
+    //         {
+    //             id: "5c715dd8090e574d06a659a4",
+    //             words: 'amplaih',
+    //             word_type: 'kata benda',
+    //             translations: ['ampelas'],
+    //             definitions: ['menggosok sampai mengkilat'],
+    //             synonyms: [''],
+    //             examples: [
+    //                 {
+    //                     word: 'taamplaih beuget alee parang nyoe',
+    //                     translation: 'gosoklah gagang parang ini hingga berkilat'
+    //                 },
+    //                 {
+    //                     word: "reuncong nyan jroh that geuamplaih",
+    //                     translation: "rencong itu sangat rapi diampelas"
+    //                 }
+    //             ]
+    //         }
+    //     ]
+    // }
+
+    async componentDidMount(){
+        const parentLetter = this.props.navigation.getParam('parentLetter', null);
+        await this.getWordList(parentLetter);
+    }
+
+    async getWordList(letter) {
+        await axios.get('search/text/' + letter)
+            .then( data => {
+                const wordList = data.data;
+                this.setState({ wordList });
+            })
+            .catch( data => {
+                const wordList = [];
+                this.setState({ wordList })
+            });
+    }
+
     render(){
+        console.log(this.state.wordList);
         return(
             <ScrollView>
                 <View style={styles.container}>
-                    <WordList navigation={this.props.navigation}/> 
-                    <WordList navigation={this.props.navigation}/> 
-                    <WordList navigation={this.props.navigation}/> 
-                    <WordList navigation={this.props.navigation}/> 
-                    <WordList navigation={this.props.navigation}/> 
-                    <WordList navigation={this.props.navigation}/> 
-                    <WordList navigation={this.props.navigation}/> 
-                    <WordList navigation={this.props.navigation}/> 
-                    <WordList navigation={this.props.navigation}/> 
-                    <WordList navigation={this.props.navigation}/> 
-                    <WordList navigation={this.props.navigation}/> 
-                    <WordList navigation={this.props.navigation}/> 
-                    <WordList navigation={this.props.navigation}/> 
-                    <WordList navigation={this.props.navigation}/> 
-                    <WordList navigation={this.props.navigation}/> 
-                    <WordList navigation={this.props.navigation}/> 
-                    <WordList navigation={this.props.navigation}/> 
-                    <WordList navigation={this.props.navigation}/> 
-                    <WordList navigation={this.props.navigation}/> 
-                    <WordList navigation={this.props.navigation}/> 
-                    <WordList navigation={this.props.navigation}/> 
+                    {
+                        this.state.wordList.map( (data, index) => (
+                            <WordList
+                                key={index}
+                                navigation={this.props.navigation}
+                                data={data}
+                            />
+                        ))
+                    }
                 </View>
             </ScrollView>
         )

@@ -9,43 +9,113 @@ import Letters from '../components/Letters/Letters';
 import * as actionCreators from '../store/actionCreator';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import axios from '../axios/axios';
 
 class SingleLetter extends Component{
+    constructor(props){
+        super(props);
+
+        this.state = {
+            parentLetter: '',
+            letters: [
+                { letter: 'A', desc: 0},
+                { letter: 'B', desc: 0},
+                { letter: 'C', desc: 0},
+                { letter: 'D', desc: 0},
+                { letter: 'E', desc: 0},
+                { letter: 'F', desc: 0},
+                { letter: 'G', desc: 0},
+                { letter: 'H', desc: 0},
+                { letter: 'I', desc: 0},
+                { letter: 'J', desc: 0},
+                { letter: 'K', desc: 0},
+                { letter: 'L', desc: 0},
+                { letter: 'M', desc: 0},
+                { letter: 'N', desc: 0},
+                { letter: 'O', desc: 0},
+                { letter: 'P', desc: 0},
+                { letter: 'Q', desc: 0},
+                { letter: 'R', desc: 0},
+                { letter: 'S', desc: 0},
+                { letter: 'T', desc: 0},
+                { letter: 'U', desc: 0},
+                { letter: 'V', desc: 0},
+                { letter: 'W', desc: 0},
+                { letter: 'X', desc: 0},
+                { letter: 'Y', desc: 0},
+                { letter: 'Z', desc: 0},
+            ]
+        }
+    }
+    
+    async componentDidMount(){
+        const parentLetter = this.props.navigation.getParam('parentLetter', null);
+        this.setParentLetter(parentLetter);
+
+        await this.mergeParentLetter(parentLetter);
+        
+        const letters = await this.getLettersInfo();
+        this.setState({letters});
+    }
+
+    async asyncForEach(array, callback) {
+        for (let index = 0; index < array.length; index++) {
+          await callback(array[index], index, array);
+        }
+      }
+
+    async getLettersInfo() {
+        const letters = [];
+
+        await this.asyncForEach(this.state.letters, async (letter) => {
+            const newLetter = await this.getLetterInfo(letter);
+
+            letters.push(newLetter);
+        });
+
+        return letters;
+    }
+
+    getLetterInfo = (lttr) => {
+        return axios.get('search/text/' + lttr.letter)
+            .then( data => {
+                const newLetter = {
+                    letter: lttr.letter,
+                    desc: data.data.length
+                };
+
+                return newLetter;
+            })
+            .catch( data => {
+                const newLetter = {
+                    letter: lttr.letter,
+                    desc: [].length
+                };
+
+                return newLetter;
+            });
+    }
+
+    setParentLetter = (parentLetter) => {
+        this.setState({parentLetter});
+    }
+
+    async mergeParentLetter(parentLetter){
+        const letters = this.state.letters.map( letter => {
+            return {
+                letter: parentLetter.concat(letter.letter),
+                desc: 0
+            }
+        });
+
+        this.setState({ letters });
+    }
+    
     render(){
-
-        const letters = [
-            { letter: 'AA', desc: '400 kata'},
-            { letter: 'AB', desc: '400 kata'},
-            { letter: 'AC', desc: '400 kata'},
-            { letter: 'AD', desc: '400 kata'},
-            { letter: 'AE', desc: '400 kata'},
-            { letter: 'AF', desc: '400 kata'},
-            { letter: 'AG', desc: '400 kata'},
-            { letter: 'AH', desc: '400 kata'},
-            { letter: 'AI', desc: '400 kata'},
-            { letter: 'AJ', desc: '400 kata'},
-            { letter: 'AK', desc: '400 kata'},
-            { letter: 'AL', desc: '400 kata'},
-            { letter: 'AM', desc: '400 kata'},
-            { letter: 'AN', desc: '400 kata'},
-            { letter: 'AO', desc: '400 kata'},
-            { letter: 'AP', desc: '400 kata'},
-            { letter: 'AQ', desc: '400 kata'},
-            { letter: 'AR', desc: '400 kata'},
-            { letter: 'AS', desc: '400 kata'},
-            { letter: 'AT', desc: '400 kata'},
-            { letter: 'AU', desc: '400 kata'},
-            { letter: 'AV', desc: '400 kata'},
-            { letter: 'AW', desc: '400 kata'},
-            { letter: 'AX', desc: '400 kata'},
-            { letter: 'AY', desc: '400 kata'},
-            { letter: 'AZ', desc: '400 kata'},
-        ];
-
         return(
             <ScrollView style={styles.container}>
                 <Letters
-                    letters={letters}
+                    letters={this.state.letters}
                     navigation={this.props.navigation}
                     size={40}
                     nextScreen='DetailNavigation'

@@ -17,8 +17,8 @@ const ContohBox = props => {
                         key={index} 
                         style={styles.box}
                     >
-                        <Text style={styles.kalimat}>"{txt.kalimat}"</Text>
-                        <Text style={styles.arti}>"{txt.arti}"</Text>
+                        <Text style={styles.kalimat}>"{txt.word}"</Text>
+                        <Text style={styles.arti}>"{txt.translation}"</Text>
                     </View>
                 ))
             }

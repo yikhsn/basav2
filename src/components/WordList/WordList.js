@@ -10,12 +10,14 @@ import Icon from 'react-native-vector-icons/Feather';
 const WordList = (props) => {
     return(
         <TouchableOpacity 
-            onPress={ () => props.navigation.navigate('DetailResult')}
+            onPress={ () => props.navigation.navigate('DetailResult', {
+                _id: props.data._id
+            })}
             style={styles.container}
         >
             <View>
-                <Text style={styles.word}>Rumoh</Text>
-                <Text style={styles.type}>Kata Benda</Text>
+                <Text style={styles.word}>{props.data.words}</Text>
+                <Text style={styles.type}>{props.data.word_type}</Text>
             </View>
             <View>
                 <Icon name="chevron-right" size={26} color="#777777" />

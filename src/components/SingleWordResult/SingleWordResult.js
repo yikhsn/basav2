@@ -9,46 +9,35 @@ import DefinisBox from '../DefinisiBox/DefinisiBox';
 import ContohBox from '../ContohBox/ContohBox';
 
 const SingleWordResult = (props) => {
+
+    const { results } = props;
     return(
         <View style={styles.container}>
             <View style={styles.headerContainer}>
-                <Text style={styles.headerText}>{props.jenisKata.toUpperCase() } | </Text>
-                <Text style={styles.headerDescription}>{props.kata}</Text>
+                <Text style={styles.headerText}>{results.word_type.toUpperCase() } | </Text>
+                <Text style={styles.headerDescription}>{results.words}</Text>
             </View>
 
             <View style={styles.contentContainer}>
                 
                 <DefinisBox
                     title="Definisi"
-                    text={[
-                        'Keranjang yang digunakan oleh etnis gayo untuk dipikul saat memetik kopi dikebun',
-                        'Keranjang yang digunakan oleh etnis gayo untuk dipikul saat memetik kopi dikebun',
-                        'Keranjang yang digunakan oleh etnis gayo untuk dipikul saat memetik kopi dikebun'
-                    ]}
+                    text={results.definitions}
                 />
 
                 <ArtiBox 
                     title="Arti Kata"
-                    text={['Satu', 'Dua', 'Tiga']}
+                    text={results.translations}
                 />
                 
                 <ArtiBox 
                     title="Sinonim"
-                    text={['Satu', 'Dua', 'Tiga']}
+                    text={results.synonyms}
                 />
                 
                 <ContohBox 
                     title="Contoh Kalimat"
-                    text={[
-                        {
-                            kalimat: "Soe sigamnyan lage awak Gayo meuambong",
-                            arti: "Siapa lelaki itu menggunakan keranjang seperti Gayo"
-                        },
-                        {
-                            kalimat: "Soe sigamnyan lage awak Gayo meuambong",
-                            arti: "Siapa lelaki itu menggunakan keranjang seperti Gayo"
-                        }
-                    ]}
+                    text={results.examples}
                 />
 
             </View>

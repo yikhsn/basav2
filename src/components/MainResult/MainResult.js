@@ -6,55 +6,51 @@ import {
 } from 'react-native';
 
 const MainResult = props => {
+    console.log(props);
+
+    const { results } = props;
+
     return(
         <View style={styles.container}>
-            <Text style={styles.mainText}>Ambong</Text>
+            <Text style={styles.mainText}>{ results.words}</Text>
 
             <View style={styles.resultBox}>
                 
-                <View style={styles.descriprionContainer}>
-                    <View style={styles.descriprionNumberContainer}>
-                        <Text style={styles.descriprionNumber}>1</Text>
-                    </View>
-                    <View>
-                        <Text style={styles.descriprionText}>Adalah sebuah kata yang digunakan untuk mendefinisikan sebuah kata yang lain yang kamu tidak tau artinya dalam bahasa aceh</Text>
-                    </View>
-                </View>
+                {
+                    results.definitions.map( definition => {
+                        return (
+                            <View style={styles.descriprionContainer}>
+                                <View style={styles.descriprionNumberContainer}>
+                                    <Text style={styles.descriprionNumber}>1</Text>
+                                </View>
+                                <View>
+                                    <Text style={styles.descriprionText}>{definition}</Text>
+                                </View>
+                            </View>
+                        )
+                    })
+                }
+
 
                 <View style={styles.translateContainer}>
                     <View style={styles.descriprionNumberContainer}>
                     </View>
                     <View style={styles.translates}>
-                        <Text style={styles.translate}>Keranjang</Text>
-                        <Text style={styles.translate}>Keranjang</Text>
-                        <Text style={styles.translate}>Keranjang</Text>
-                        <Text style={styles.translate}>Keranjang</Text>
+                        {
+                            results.translations.map( translation => {
+                                return (
+                                    <Text 
+                                        style={styles.translate}
+                                    >
+                                        {translation}
+                                    </Text>
+                                )
+
+                            })
+                        }
                     </View>
                 </View>
 
-            </View>
-
-
-            <View style={styles.resultBox}>
-                <View style={styles.descriprionContainer}>
-                    <View style={styles.descriprionNumberContainer}>
-                        <Text style={styles.descriprionNumber}>2</Text>
-                    </View>
-                    <View>
-                        <Text style={styles.descriprionText}>Adalah sebuah kata yang digunakan untuk mendefinisikan sebuah kata yang lain yang kamu tidak tau artinya dalam bahasa aceh</Text>
-                    </View>
-                </View>
-
-                <View style={styles.translateContainer}>
-                    <View style={styles.descriprionNumberContainer}>
-                    </View>
-                    <View style={styles.translates}>
-                        <Text style={styles.translate}>Keranjang</Text>
-                        <Text style={styles.translate}>Keranjang</Text>
-                        <Text style={styles.translate}>Keranjang</Text>
-                        <Text style={styles.translate}>Keranjang</Text>
-                    </View>
-                </View>
             </View>
         </View>
     )

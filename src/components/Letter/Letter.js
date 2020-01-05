@@ -14,10 +14,12 @@ const Letter = props => {
     return(
         <TouchableOpacity 
             style={styles.container}
-            onPress={ () => props.navigation.navigate(props.nextScreen) }
+            onPress={ () => props.navigation.navigate(props.nextScreen, {
+                parentLetter: props.letter
+            })}
         >
             <Text style={ [styles.letter, { fontSize: props.size }]}>{props.letter}</Text>
-            <Text style={styles.description}>400 kata</Text>
+            <Text style={styles.description}>{props.desc} kata</Text>
         </TouchableOpacity>
     )
 }
