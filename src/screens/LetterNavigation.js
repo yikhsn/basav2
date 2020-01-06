@@ -10,12 +10,14 @@ import * as actionCreators from '../store/actionCreator';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import axios from '../axios/axios';
+import Loader from '../components/Loader/Loader';
 
 class SingleLetter extends Component{
     constructor(props){
         super(props);
 
         this.state = {
+            isLoaded: false,
             parentLetter: '',
             letters: [
                 { letter: 'A', desc: 0},
@@ -56,6 +58,8 @@ class SingleLetter extends Component{
         
         const letters = await this.getLettersInfo();
         this.setState({letters});
+
+        this.isLoaded();
     }
 
     async asyncForEach(array, callback) {
@@ -110,17 +114,29 @@ class SingleLetter extends Component{
 
         this.setState({ letters });
     }
+
+    isLoaded = () => {
+        this.setState({ isLoaded: true });
+    }
     
     render(){
         return(
-            <ScrollView style={styles.container}>
-                <Letters
-                    letters={this.state.letters}
-                    navigation={this.props.navigation}
-                    size={40}
-                    nextScreen='DetailNavigation'
-                />
-            </ScrollView>
+            <View style={styles.container}>
+                {
+                    this.state.isLoaded
+                    ?
+                        <ScrollView>
+                            <Letters
+                                letters={this.state.letters}
+                                navigation={this.props.navigation}
+                                size={40}
+                                nextScreen='DetailNavigation'
+                            />
+                        </ScrollView>
+                    :
+                        <Loader />
+                }
+            </View>
         )
     }
 }

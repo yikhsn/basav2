@@ -6,6 +6,7 @@ import {
     StyleSheet
 } from 'react-native';
 import WordList from '../components/WordList/WordList';
+import Loader from '../components/Loader/Loader';
 
 import axios from '../axios/axios';
 
@@ -16,6 +17,7 @@ import { bindActionCreators } from 'redux';
 class DetailLetter extends Component{
   
     state = {
+        isLoaded: false,
         parentLetter: '',
         wordList: [
 
@@ -48,6 +50,11 @@ class DetailLetter extends Component{
     async componentDidMount(){
         const parentLetter = this.props.navigation.getParam('parentLetter', null);
         await this.getWordList(parentLetter);
+        this.isLoaded();
+    }
+
+    isLoaded (){
+        this.setState({ isLoaded: true });
     }
 
     async getWordList(letter) {
@@ -63,21 +70,30 @@ class DetailLetter extends Component{
     }
 
     render(){
-        console.log(this.state.wordList);
         return(
-            <ScrollView>
-                <View style={styles.container}>
-                    {
-                        this.state.wordList.map( (data, index) => (
-                            <WordList
-                                key={index}
-                                navigation={this.props.navigation}
-                                data={data}
-                            />
-                        ))
-                    }
-                </View>
-            </ScrollView>
+            <View style={styles.container}>
+                {
+                    this.state.isLoaded 
+                    ?
+                    <ScrollView>
+                        <View>
+                            {
+                                this.state.wordList.map( (data, index) => (
+                                    <WordList
+                                        key={index}
+                                        navigation={this.props.navigation}
+                                        data={data}
+                                    />
+                                ))
+                            }
+                        </View>
+                    </ScrollView>
+
+                    :
+                        <Loader />
+                }
+            </View>
+
         )
     }
 }

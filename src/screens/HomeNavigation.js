@@ -10,6 +10,7 @@ import {
 import axios from '../axios/axios';
 
 import Letters from '../components/Letters/Letters';
+import Loader from '../components/Loader/Loader';
 
 import * as actionCreators from '../store/actionCreator';
 import { connect } from 'react-redux';
@@ -17,6 +18,7 @@ import { bindActionCreators } from 'redux';
 
 class Home extends Component {
     state = {
+        isLoaded: false,
         letters: [
             { letter: 'A', desc: 0},
             { letter: 'B', desc: 0},
@@ -50,6 +52,7 @@ class Home extends Component {
     async componentDidMount(){
         const letters = await this.getLettersInfo();
         this.setState({letters});
+        this.isLoaded();
     }
 
     async asyncForEach(array, callback) {
@@ -89,17 +92,29 @@ class Home extends Component {
                 return newLetter;
             });
     }
+
+    isLoaded = () => {
+        this.setState({ isLoaded: true });
+    }
  
     render(){
         return(
-            <ScrollView style={styles.container}>
-                <Letters
-                    navigation={this.props.navigation}
-                    letters={this.state.letters}
-                    size={50}
-                    nextScreen='LetterNavigation'
-                />
-            </ScrollView>
+            <View style={styles.container}>
+                {
+                    this.state.isLoaded
+                    ?
+                        <ScrollView>
+                            <Letters
+                                navigation={this.props.navigation}
+                                letters={this.state.letters}
+                                size={50}
+                                nextScreen='LetterNavigation'
+                            />
+                        </ScrollView>
+                    :
+                        <Loader />
+                }
+            </View>
         )
     }
 }
@@ -108,7 +123,6 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#eaeaea',
-        // padding: 2,
     }
 });
 

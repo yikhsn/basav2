@@ -20,26 +20,49 @@ const SingleWordResult = (props) => {
 
             <View style={styles.contentContainer}>
                 
-                <DefinisBox
-                    title="Definisi"
-                    text={results.definitions}
-                />
+                {
+                    results.definitions.length > 0 
+                        ? 
+                            <DefinisBox
+                                title="Definisi"
+                                text={results.definitions}
+                            />
+                        : 
+                            null
+                }
 
-                <ArtiBox 
-                    title="Arti Kata"
-                    text={results.translations}
-                />
-                
-                <ArtiBox 
-                    title="Sinonim"
-                    text={results.synonyms}
-                />
-                
-                <ContohBox 
-                    title="Contoh Kalimat"
-                    text={results.examples}
-                />
+                {
+                    results.translations.length > 0
+                        ?
+                            <ArtiBox 
+                                title="Arti Kata"
+                                text={results.translations}
+                            />
+                        :
+                            null
+                }
 
+                {
+                    results.synonyms.length > 0
+                        ?
+                            <ArtiBox 
+                                title="Sinonim"
+                                text={results.synonyms}
+                            />
+                        :
+                            null
+                }
+
+                {
+                    results.examples.length > 0
+                        ?
+                            <ContohBox 
+                                title="Contoh Kalimat"
+                                text={results.examples}
+                            />
+                        :
+                            null
+                }
             </View>
         </View>
     )

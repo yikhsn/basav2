@@ -17,13 +17,16 @@ const MainResult = props => {
             <View style={styles.resultBox}>
                 
                 {
-                    results.definitions.map( definition => {
+                    results.definitions.map( (definition, index) => {
                         return (
-                            <View style={styles.descriprionContainer}>
+                            <View
+                                key={index}
+                                style={styles.descriprionContainer}
+                            >
                                 <View style={styles.descriprionNumberContainer}>
-                                    <Text style={styles.descriprionNumber}>1</Text>
+                                    <Text style={styles.descriprionNumber}>{index + 1}</Text>
                                 </View>
-                                <View>
+                                <View style={styles.descriprionTextContainer}>
                                     <Text style={styles.descriprionText}>{definition}</Text>
                                 </View>
                             </View>
@@ -31,15 +34,15 @@ const MainResult = props => {
                     })
                 }
 
-
                 <View style={styles.translateContainer}>
                     <View style={styles.descriprionNumberContainer}>
                     </View>
                     <View style={styles.translates}>
                         {
-                            results.translations.map( translation => {
+                            results.translations.map( (translation, index) => {
                                 return (
-                                    <Text 
+                                    <Text
+                                        key={index}
                                         style={styles.translate}
                                     >
                                         {translation}
@@ -85,10 +88,14 @@ const styles = StyleSheet.create({
         fontSize: 12,
         color: '#333333'
     },
+    descriprionTextContainer: {
+        flex: 1
+    },
     descriprionText: {
         fontFamily: 'OpenSans-Regular',
         fontSize: 16,
-        color: '#333333'
+        color: '#333333',
+        borderRadius: 15
     },
     translateContainer: {
         flexDirection: 'row',

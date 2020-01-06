@@ -55,12 +55,12 @@ class DetailResult extends Component{
             <ScrollView style={styles.container}>
                 <MainResult
                     results={this.state.results}
-                />
+                    />
                 <SingleWordResult
                     kata="ambong"
                     jenisKata="kata benda"
                     results={this.state.results}
-                />
+                    />
             </ScrollView>
         )
     }
