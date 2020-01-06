@@ -6,6 +6,9 @@ import HomeNavigation from './src/screens/HomeNavigation';
 import LetterNavigation from './src/screens/LetterNavigation';
 import DetailNavigation from './src/screens/DetailNavigation';
 import DetailResult from './src/screens/DetailResult';
+import SearchScreen from './src/screens/SearchScreen';
+
+import SearchHeaderApple from './src/components/SearchHeaderApple/SearchHeaderApple';
 
 const AppNavigator = createStackNavigator(
     {
@@ -32,10 +35,16 @@ const AppNavigator = createStackNavigator(
             navigationOptions: {
                 title: 'Result'
             }
+        },
+        SearchScreen: {
+            screen: SearchScreen,
+            navigationOptions: {
+                header: navProps => <SearchHeaderApple {...navProps}/>
+            }
         }
     },
     {
-        initialRouteName: 'HomeNavigation',
+        initialRouteName: 'SearchScreen',
         defaultNavigationOptions: {
             headerStyle: {
                 backgroundColor: '#00C749',
@@ -48,7 +57,8 @@ const AppNavigator = createStackNavigator(
                 // fontFamily: 'Roboto-Regular',
             },
         }
-    }
+    },
+    
 )
 
 const AppContainer = createAppContainer(AppNavigator);
