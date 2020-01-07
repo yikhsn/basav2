@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
 import{
     View,
+    ScrollView,
+    TouchableOpacity,
     StyleSheet,
     Text
 } from 'react-native';
-
 import * as actionCreators from '../store/actionCreator';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import axios from '../axios/axios';
+import SearchResultHeader from '../components/SearchResultHeader/SearchResultHeader';
+import SearchResultContent from '../components/SearchResultContent/SearchResultContent';
 
-import SearchBox from '../components/SearchBox/SearchBox';
 
 class SearchScreen extends Component{
     constructor(props){
@@ -23,20 +24,21 @@ class SearchScreen extends Component{
 
     render(){
         return(
-            <View style={styles.container}>
-                <View>
-                    {
-                        this.props.datas.searchWordList.map( word => {
-                            return(
-                                <View>
-                                    <Text>{word.words}</Text>
-                                </View>
-                            )
-                        })
-                    }
+            <ScrollView style={styles.container}>
+                <View style={styles.boxResults}>
+
+                    <SearchResultHeader />
+
+                    <SearchResultContent
+                        searchWordList={this.props.datas.searchWordList}
+                        navigation={this.props.navigation}
+                    />
+
+                    
+
                 </View>
 
-            </View>
+            </ScrollView>
         )
     }
 }
@@ -44,9 +46,10 @@ class SearchScreen extends Component{
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        padding: 10,
-        backgroundColor: '#eaeaea'
-
+        backgroundColor: '#FFFFFF'
+    },
+    boxResults: {
+        backgroundColor: '#FFFFFF'
     }
 });
 

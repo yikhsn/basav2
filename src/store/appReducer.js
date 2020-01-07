@@ -24,6 +24,263 @@ const initialState = {
                     translation: "rencong itu sangat rapi diampelas"
                 }
             ]
+        },
+        {
+            id: "5c715dd8090e574d06a659a4",
+            words: 'amplaih',
+            word_type: 'kata benda',
+            translations: ['ampelas'],
+            definitions: ['menggosok sampai mengkilat'],
+            synonyms: [],
+            examples: [
+                {
+                    word: 'taamplaih beuget alee parang nyoe',
+                    translation: 'gosoklah gagang parang ini hingga berkilat'
+                },
+                {
+                    word: "reuncong nyan jroh that geuamplaih",
+                    translation: "rencong itu sangat rapi diampelas"
+                }
+            ]
+        },        {
+            id: "5c715dd8090e574d06a659a4",
+            words: 'amplaih',
+            word_type: 'kata benda',
+            translations: ['ampelas'],
+            definitions: ['menggosok sampai mengkilat'],
+            synonyms: [],
+            examples: [
+                {
+                    word: 'taamplaih beuget alee parang nyoe',
+                    translation: 'gosoklah gagang parang ini hingga berkilat'
+                },
+                {
+                    word: "reuncong nyan jroh that geuamplaih",
+                    translation: "rencong itu sangat rapi diampelas"
+                }
+            ]
+        },        {
+            id: "5c715dd8090e574d06a659a4",
+            words: 'amplaih',
+            word_type: 'kata benda',
+            translations: ['ampelas'],
+            definitions: ['menggosok sampai mengkilat'],
+            synonyms: [],
+            examples: [
+                {
+                    word: 'taamplaih beuget alee parang nyoe',
+                    translation: 'gosoklah gagang parang ini hingga berkilat'
+                },
+                {
+                    word: "reuncong nyan jroh that geuamplaih",
+                    translation: "rencong itu sangat rapi diampelas"
+                }
+            ]
+        },        {
+            id: "5c715dd8090e574d06a659a4",
+            words: 'amplaih',
+            word_type: 'kata benda',
+            translations: ['ampelas'],
+            definitions: ['menggosok sampai mengkilat'],
+            synonyms: [],
+            examples: [
+                {
+                    word: 'taamplaih beuget alee parang nyoe',
+                    translation: 'gosoklah gagang parang ini hingga berkilat'
+                },
+                {
+                    word: "reuncong nyan jroh that geuamplaih",
+                    translation: "rencong itu sangat rapi diampelas"
+                }
+            ]
+        },        {
+            id: "5c715dd8090e574d06a659a4",
+            words: 'amplaih',
+            word_type: 'kata benda',
+            translations: ['ampelas'],
+            definitions: ['menggosok sampai mengkilat'],
+            synonyms: [],
+            examples: [
+                {
+                    word: 'taamplaih beuget alee parang nyoe',
+                    translation: 'gosoklah gagang parang ini hingga berkilat'
+                },
+                {
+                    word: "reuncong nyan jroh that geuamplaih",
+                    translation: "rencong itu sangat rapi diampelas"
+                }
+            ]
+        },        {
+            id: "5c715dd8090e574d06a659a4",
+            words: 'amplaih',
+            word_type: 'kata benda',
+            translations: ['ampelas'],
+            definitions: ['menggosok sampai mengkilat'],
+            synonyms: [],
+            examples: [
+                {
+                    word: 'taamplaih beuget alee parang nyoe',
+                    translation: 'gosoklah gagang parang ini hingga berkilat'
+                },
+                {
+                    word: "reuncong nyan jroh that geuamplaih",
+                    translation: "rencong itu sangat rapi diampelas"
+                }
+            ]
+        },        {
+            id: "5c715dd8090e574d06a659a4",
+            words: 'amplaih',
+            word_type: 'kata benda',
+            translations: ['ampelas'],
+            definitions: ['menggosok sampai mengkilat'],
+            synonyms: [],
+            examples: [
+                {
+                    word: 'taamplaih beuget alee parang nyoe',
+                    translation: 'gosoklah gagang parang ini hingga berkilat'
+                },
+                {
+                    word: "reuncong nyan jroh that geuamplaih",
+                    translation: "rencong itu sangat rapi diampelas"
+                }
+            ]
+        },        {
+            id: "5c715dd8090e574d06a659a4",
+            words: 'amplaih',
+            word_type: 'kata benda',
+            translations: ['ampelas'],
+            definitions: ['menggosok sampai mengkilat'],
+            synonyms: [],
+            examples: [
+                {
+                    word: 'taamplaih beuget alee parang nyoe',
+                    translation: 'gosoklah gagang parang ini hingga berkilat'
+                },
+                {
+                    word: "reuncong nyan jroh that geuamplaih",
+                    translation: "rencong itu sangat rapi diampelas"
+                }
+            ]
+        },        {
+            id: "5c715dd8090e574d06a659a4",
+            words: 'amplaih',
+            word_type: 'kata benda',
+            translations: ['ampelas'],
+            definitions: ['menggosok sampai mengkilat'],
+            synonyms: [],
+            examples: [
+                {
+                    word: 'taamplaih beuget alee parang nyoe',
+                    translation: 'gosoklah gagang parang ini hingga berkilat'
+                },
+                {
+                    word: "reuncong nyan jroh that geuamplaih",
+                    translation: "rencong itu sangat rapi diampelas"
+                }
+            ]
+        },        {
+            id: "5c715dd8090e574d06a659a4",
+            words: 'amplaih',
+            word_type: 'kata benda',
+            translations: ['ampelas'],
+            definitions: ['menggosok sampai mengkilat'],
+            synonyms: [],
+            examples: [
+                {
+                    word: 'taamplaih beuget alee parang nyoe',
+                    translation: 'gosoklah gagang parang ini hingga berkilat'
+                },
+                {
+                    word: "reuncong nyan jroh that geuamplaih",
+                    translation: "rencong itu sangat rapi diampelas"
+                }
+            ]
+        },        {
+            id: "5c715dd8090e574d06a659a4",
+            words: 'amplaih',
+            word_type: 'kata benda',
+            translations: ['ampelas'],
+            definitions: ['menggosok sampai mengkilat'],
+            synonyms: [],
+            examples: [
+                {
+                    word: 'taamplaih beuget alee parang nyoe',
+                    translation: 'gosoklah gagang parang ini hingga berkilat'
+                },
+                {
+                    word: "reuncong nyan jroh that geuamplaih",
+                    translation: "rencong itu sangat rapi diampelas"
+                }
+            ]
+        },        {
+            id: "5c715dd8090e574d06a659a4",
+            words: 'amplaih',
+            word_type: 'kata benda',
+            translations: ['ampelas'],
+            definitions: ['menggosok sampai mengkilat'],
+            synonyms: [],
+            examples: [
+                {
+                    word: 'taamplaih beuget alee parang nyoe',
+                    translation: 'gosoklah gagang parang ini hingga berkilat'
+                },
+                {
+                    word: "reuncong nyan jroh that geuamplaih",
+                    translation: "rencong itu sangat rapi diampelas"
+                }
+            ]
+        },        {
+            id: "5c715dd8090e574d06a659a4",
+            words: 'amplaih',
+            word_type: 'kata benda',
+            translations: ['ampelas'],
+            definitions: ['menggosok sampai mengkilat'],
+            synonyms: [],
+            examples: [
+                {
+                    word: 'taamplaih beuget alee parang nyoe',
+                    translation: 'gosoklah gagang parang ini hingga berkilat'
+                },
+                {
+                    word: "reuncong nyan jroh that geuamplaih",
+                    translation: "rencong itu sangat rapi diampelas"
+                }
+            ]
+        },        {
+            id: "5c715dd8090e574d06a659a4",
+            words: 'amplaih',
+            word_type: 'kata benda',
+            translations: ['ampelas'],
+            definitions: ['menggosok sampai mengkilat'],
+            synonyms: [],
+            examples: [
+                {
+                    word: 'taamplaih beuget alee parang nyoe',
+                    translation: 'gosoklah gagang parang ini hingga berkilat'
+                },
+                {
+                    word: "reuncong nyan jroh that geuamplaih",
+                    translation: "rencong itu sangat rapi diampelas"
+                }
+            ]
+        },
+        {
+            id: "5c715dd8090e574d06a659a4",
+            words: 'amplaih',
+            word_type: 'kata benda',
+            translations: ['ampelas'],
+            definitions: ['menggosok sampai mengkilat'],
+            synonyms: [],
+            examples: [
+                {
+                    word: 'taamplaih beuget alee parang nyoe',
+                    translation: 'gosoklah gagang parang ini hingga berkilat'
+                },
+                {
+                    word: "reuncong nyan jroh that geuamplaih",
+                    translation: "rencong itu sangat rapi diampelas"
+                }
+            ]
         }
     ]
 }

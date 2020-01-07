@@ -5,7 +5,7 @@ import {
     Text,
     StyleSheet
 } from 'react-native';
-import Icon from 'react-native-vector-icons/Feather';
+import Icon from 'react-native-vector-icons/Entypo';
 
 const WordList = (props) => {
     return(
@@ -20,7 +20,7 @@ const WordList = (props) => {
                 <Text style={styles.type}>{props.data.word_type}</Text>
             </View>
             <View>
-                <Icon name="chevron-right" size={26} color="#777777" />
+                <Icon name="chevron-thin-right" size={26} color="#777777" />
             </View>
         </TouchableOpacity>
     )
