@@ -44,7 +44,7 @@ const AppNavigator = createStackNavigator(
         }
     },
     {
-        initialRouteName: 'SearchScreen',
+        initialRouteName: 'HomeNavigation',
         defaultNavigationOptions: {
             headerStyle: {
                 backgroundColor: '#00C749',

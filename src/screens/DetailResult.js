@@ -7,6 +7,7 @@ import {
 } from 'react-native';
 import MainResult from '../components/MainResult/MainResult';
 import SingleWordResult from '../components/SingleWordResult/SingleWordResult';
+import Loader from '../components/Loader/Loader';
 
 import * as actionCreators from '../store/actionCreator';
 import { connect } from 'react-redux';
@@ -19,20 +20,14 @@ class DetailResult extends Component{
         super(props);
 
         this.state = {
-            results : {
-                id: '',
-                words: '',
-                word_type: '',
-                translations: [],
-                definitions: [],
-                synonyms: [],
-                examples: []
-            }
+            isLoaded: false,
+            results : {}
         }
     }
     
     async componentDidMount(){
         await this.getData();
+        this.isLoaded();
     }
 
     async getData(){
@@ -46,22 +41,39 @@ class DetailResult extends Component{
                 const results = {};
                 this.setState({results});
             });
+
+        
+    }
+
+    isLoaded(){
+        this.setState({ isLoaded: true });
     }
     
     render(){
-
-        // console.log(this.state.results);
         return(
-            <ScrollView style={styles.container}>
-                <MainResult
-                    results={this.state.results}
-                    />
-                <SingleWordResult
-                    kata="ambong"
-                    jenisKata="kata benda"
-                    results={this.state.results}
-                    />
-            </ScrollView>
+                <View style={styles.container}>
+                    {
+                        this.state.isLoaded
+                        ?
+                            Object.entries(this.state.results).length === 0
+                            ?
+                                <Text>Object is null</Text>
+                            :
+                                <ScrollView style={styles.results}>
+                                    <MainResult
+                                        results={this.state.results}
+                                        />
+                                    <SingleWordResult
+                                        kata="ambong"
+                                        jenisKata="kata benda"
+                                        results={this.state.results}
+                                        />
+                                </ScrollView>
+                        :
+                            <Loader />
+                    }
+                    </View>
+
         )
     }
 }
@@ -70,8 +82,10 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#eaeaea',
-        padding: 10
     },
+    results:{
+        padding: 10
+    }
 
 
 });
