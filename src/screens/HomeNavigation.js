@@ -11,6 +11,7 @@ import axios from '../axios/axios';
 
 import Letters from '../components/Letters/Letters';
 import Loader from '../components/Loader/Loader';
+import Icon from 'react-native-vector-icons/Entypo';
 
 import * as actionCreators from '../store/actionCreator';
 import { connect } from 'react-redux';
@@ -18,7 +19,7 @@ import { bindActionCreators } from 'redux';
 
 class Home extends Component {
     state = {
-        isLoaded: false,
+        isLoaded: true,
         letters: [
             { letter: 'A', desc: 0},
             { letter: 'B', desc: 0},
@@ -104,12 +105,18 @@ class Home extends Component {
                     this.state.isLoaded
                     ?
                         <ScrollView>
-                            <Letters
-                                navigation={this.props.navigation}
-                                letters={this.state.letters}
-                                size={50}
-                                nextScreen='LetterNavigation'
-                            />
+                            <View style={styles.letterContainer}>
+                                <View style={styles.letterContainerTitle}>
+                                    <Icon name='open-book' size={20} color='#777777' style={styles.letterContainerTitleIcon} />
+                                    <Text style={styles.letterContainerTitleText}>Jelajah</Text>
+                                </View>
+                                <Letters
+                                    navigation={this.props.navigation}
+                                    letters={this.state.letters}
+                                    size={50}
+                                    nextScreen='LetterNavigation'
+                                />
+                            </View>
                         </ScrollView>
                     :
                         <Loader />
@@ -123,6 +130,40 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#eaeaea',
+    }, 
+    searchContainer: {
+        // backgroundColor: '#00C749',
+        // marginTop: 5,
+        // marginLeft: 5,
+        // marginRight: 5,
+        paddingTop: 5,
+        // paddingBottom: 5,
+        paddingLeft: 5,
+        paddingRight: 5,
+
+    },
+    searchContainerTitle: {
+        fontFamily: 'OpenSans-Regular',
+        fontSize: 16,
+        color: '#666666',
+        marginBottom: 3
+    }, 
+    letterContainer: {
+        marginTop: 10
+    },
+    letterContainerTitle: {
+        paddingHorizontal: 15,
+        flexDirection: 'row'
+    },
+    letterContainerTitleText: {
+        fontFamily: 'OpenSans-Regular',
+        fontSize: 18,
+        color: '#777777',
+        marginBottom: 3,
+    }, 
+    letterContainerTitleIcon: {
+        marginRight: 7,
+        paddingTop: 4
     }
 });
 

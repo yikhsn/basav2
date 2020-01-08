@@ -9,13 +9,16 @@ import DetailResult from './src/screens/DetailResult';
 import SearchScreen from './src/screens/SearchScreen';
 
 import SearchHeaderApple from './src/components/SearchHeaderApple/SearchHeaderApple';
+import SearchHeaderAppleScreen from './src/components/SearchHeaderAppleScreen/SearchHeaderAppleScreen';
 
 const AppNavigator = createStackNavigator(
     {
         HomeNavigation: {
             screen: HomeNavigation,
             navigationOptions: {
-                title: 'Home'
+                // title: 'Home'
+                header: navProps => <SearchHeaderApple {...navProps}/>
+
             },
         },
         LetterNavigation: {
@@ -39,7 +42,7 @@ const AppNavigator = createStackNavigator(
         SearchScreen: {
             screen: SearchScreen,
             navigationOptions: {
-                header: navProps => <SearchHeaderApple {...navProps}/>
+                header: navProps => <SearchHeaderAppleScreen {...navProps}/>
             }
         }
     },

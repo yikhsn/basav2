@@ -1,13 +1,14 @@
 import React from 'react';
 import {
     View,
+    TouchableOpacity,
     Text,
     TextInput,
     StyleSheet
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather'
 
-const SearchBox = (props) => {
+const SearchBoxScreen = (props) => {
     return(
         <View
             style={styles.container}
@@ -17,11 +18,10 @@ const SearchBox = (props) => {
                 autoCorrect={false}
                 value={props.values}
                 onChangeText={ text => props.handleInputChange(text)}
-                onFocus={ text => props.navigation.navigate('SearchScreen') }
+                autoFocus={true}
                 placeholder='Masukkan kata disini...'
                 placeholderTextColor='#CCCCCC'
             />
-            <Icon name='search' size={30} color='#cccccc' style={styles.searchIcon} />
         </View>
     )
 }
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
         borderRadius: 5
     },
     inputBox: {
-        flex: 1,
+        // flex: 1,
         fontSize: 18,
         fontFamily: 'OpenSans-SemiBold',
         color: '#666666',
@@ -49,4 +49,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default SearchBox;
+export default SearchBoxScreen;
