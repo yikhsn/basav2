@@ -11,9 +11,9 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 import axios from '../../axios/axios';
 
-import SearchBoxScreen from '../SearchBoxScreen/SearchBoxScreen';
+import SearchBox from '../SearchBox/SearchBox';
 
-class SearchHeaderAppleScreen extends Component{
+class HeaderSearch extends Component{
     constructor(props){
         super(props);
 
@@ -41,8 +41,11 @@ class SearchHeaderAppleScreen extends Component{
         }
     }
 
-    getData = (text) => {
-        axios.get('search/text/' + text)
+    getData = async(text) => {
+    
+        this.props.setIsSearching(true);
+    
+        await axios.get('search/text/' + text)
             .then(data => {
                 const wordList = data.data;
                 this.props.setSearchWordList(wordList);
@@ -51,27 +54,27 @@ class SearchHeaderAppleScreen extends Component{
                 const wordList = [];
                 this.props.setSearchWordList(wordList);
             })
+
+        this.props.setIsSearching(false);
+
     }
 
-    handleInputChange = (input) => {
+    handleInputChange = async(input) => {
         this.props.setValuesSearch(input);
         
-        this.getData(input);
+        await this.getData(input);
+
     }
 
     render(){
-
         const { datas } = this.props;
 
-        // console.log(this.props.navigation);
-        
         return(
             <View style={styles.container}>
                 <View style={styles.navigationContainer}>
                     <TouchableOpacity 
                         style={styles.navigationButton}
                         onPress={ () => {
-                            console.log('is pressed')
                             this.props.navigation.goBack()
                         } }
                     
@@ -81,7 +84,7 @@ class SearchHeaderAppleScreen extends Component{
                     </TouchableOpacity>
                 </View>
                 <View style={styles.searchBoxContainer}>
-                    <SearchBoxScreen
+                    <SearchBox
                         values={datas.searchValues}
                         handleInputChange={this.handleInputChange}
                         navigation={this.props.navigation}
@@ -95,15 +98,18 @@ class SearchHeaderAppleScreen extends Component{
 const styles = StyleSheet.create({
     container: {
         flexDirection: 'column',
-        paddingTop: 40,
-        padding: 10,
+        height: Platform.OS === 'android' ? 115 : 155,
+        paddingTop: Platform.OS === 'android' ? 5 : 40,
+        paddingBottom: 10,
+        paddingRight: 10,
+        paddingLeft: 10,
         backgroundColor: '#00C749'
     },
     navigationContainer: {
-        flex: 1,
         marginBottom: 5
     },
     navigationButton: {
+        width: 100,
         flexDirection: 'row',
         alignItems: 'center',
 
@@ -133,4 +139,4 @@ const mapDispatchToProps = dispatch => {
     return bindActionCreators(actionCreators, dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(SearchHeaderAppleScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(HeaderSearch);

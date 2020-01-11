@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-    View, StyleSheet, Text, TouchableOpacity
+    View, StyleSheet, Text, TouchableOpacity, Platform
 } from 'react-native';
 
 import * as actionCreators from '../../store/actionCreator';
@@ -8,29 +8,32 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-import SearchBox from '../SearchBox/SearchBox';
+import SearchBoxOutside from '../SearchBoxOutside/SearchBoxOutside';
 
-class SearchHeaderAppleNav extends Component{
+class HeaderNav extends Component{
     constructor(props){
         super(props);
     }
 
     render(){
         const { datas, navigation } = this.props;
-        
+
         return(
             <View style={styles.container}>
                 <View style={styles.navigationContainer}>
-                    <TouchableOpacity 
-                        style={styles.navigationButton}
-                        onPress={ () => navigation.goBack(null) }
-                    >
-                        <Icon style={styles.navigationIcon} name='ios-arrow-back' size={30} color='#FFFFFF' />
-                        <Text style={styles.navigationText}>Kembali</Text>
-                    </TouchableOpacity>
+                    {/* <View> */}
+
+                        <TouchableOpacity 
+                            style={styles.navigationButton}
+                            onPress={ () => navigation.goBack() }
+                            >
+                            <Icon style={styles.navigationIcon} name='ios-arrow-back' size={30} color='#FFFFFF' />
+                            <Text style={styles.navigationText}>Kembali</Text>
+                        </TouchableOpacity>
+                    {/* </View> */}
                 </View>
                 <View style={styles.searchBoxContainer}>
-                    <SearchBox 
+                    <SearchBoxOutside 
                         navigation={this.props.navigation}
                     />
                     </View>
@@ -42,15 +45,18 @@ class SearchHeaderAppleNav extends Component{
 const styles = StyleSheet.create({
     container: {
         flexDirection: 'column',
-        paddingTop: 40,
-        padding: 10,
+        height: Platform.OS === 'android' ? 115 : 155,
+        paddingTop: Platform.OS === 'android' ? 5 : 40,
+        paddingBottom: 10,
+        paddingRight: 10,
+        paddingLeft: 10,
         backgroundColor: '#00C749'
     },
     navigationContainer: {
-        flex: 1,
         marginBottom: 5
     },
     navigationButton: {
+        width: 100,
         flexDirection: 'row',
         alignItems: 'center',
 
@@ -80,4 +86,4 @@ const mapDispatchToProps = dispatch => {
     return bindActionCreators(actionCreators, dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(SearchHeaderAppleNav);
+export default connect(mapStateToProps, mapDispatchToProps)(HeaderNav);

@@ -12,8 +12,9 @@ import { bindActionCreators } from 'redux';
 
 import SearchResultHeader from '../components/SearchResultHeader/SearchResultHeader';
 import SearchResultContent from '../components/SearchResultContent/SearchResultContent';
+import Loader from '../components/Loader/Loader';
 
-import SearchHeaderAppleScreen from '../components/SearchHeaderAppleScreen/SearchHeaderAppleScreen';
+import SearchHeaderAppleScreen from '../components/HeaderSearch/HeaderSearch';
 
 
 class SearchScreen extends Component{
@@ -31,22 +32,31 @@ class SearchScreen extends Component{
     }
 
     render(){
+        const { datas, navigation } = this.props;
+
         return(
-            <ScrollView style={styles.container}>
-                <View style={styles.boxResults}>
+            <View style={styles.container}>
+                {
+                    datas.isSearching
+                    ?
+                        <Loader />
+                    :
+                            datas.searchWordList.length > 0
+                            ?
+                            <ScrollView>
+                                <View style={styles.boxResults}>
+                                    <SearchResultHeader />
 
-                    <SearchResultHeader />
-
-                    <SearchResultContent
-                        searchWordList={this.props.datas.searchWordList}
-                        navigation={this.props.navigation}
-                    />
-
-                    
-
-                </View>
-
-            </ScrollView>
+                                    <SearchResultContent
+                                        searchWordList={datas.searchWordList}
+                                        navigation={navigation}
+                                        />
+                                </View>
+                            </ScrollView>
+                            :
+                                null
+                }
+            </View>
         )
     }
 }
@@ -57,6 +67,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#FFFFFF'
     },
     boxResults: {
+        flex: 1,
         backgroundColor: '#FFFFFF'
     }
 });

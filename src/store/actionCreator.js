@@ -14,9 +14,16 @@ export const setValuesSearch = values => {
     }
 }
 
-export const setSearchWordList = wordList => {
+export const setSearchWordList = searchWordList => {
     return {
         type: actionTypes.SET_SEARCH_WORDLIST,
-        wordList: wordList
+        searchWordList: searchWordList
+    }
+}
+
+export const setIsSearching = isSearching => {
+    return {
+        type: actionTypes.SET_IS_SEARCHING,
+        isSearching: isSearching
     }
 }

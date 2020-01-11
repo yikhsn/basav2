@@ -15,7 +15,7 @@ import { bindActionCreators } from 'redux';
 
 import axios from '../axios/axios';
 
-import SearchHeaderAppleNav from '../components/SearchHeaderAppleNav/SearchHeaderAppleNav';
+import SearchHeaderAppleNav from '../components/HeaderNav/HeaderNav';
 
 class DetailResult extends Component{
     constructor(props){

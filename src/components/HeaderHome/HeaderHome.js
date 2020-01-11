@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import {
-    View, StyleSheet, Text
+    View, StyleSheet, Text, Platform
 } from 'react-native';
 
 import * as actionCreators from '../../store/actionCreator';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import SearchBox from '../SearchBox/SearchBox';
+import SearchBoxOutside from '../SearchBoxOutside/SearchBoxOutside';
 
-class SearchHeaderApple extends Component{
+class HeaderHome extends Component{
     constructor(props){
         super(props);
     }
@@ -19,7 +19,7 @@ class SearchHeaderApple extends Component{
 
         return(
             <View style={styles.container}>
-                <SearchBox
+                <SearchBoxOutside
                     navigation={this.props.navigation}
                 />
             </View>
@@ -29,8 +29,11 @@ class SearchHeaderApple extends Component{
 
 const styles = StyleSheet.create({
     container: {
-        paddingTop: 60,
-        padding: 10,
+        height: Platform.OS === 'android' ? 80 : 130,
+        paddingTop: Platform.OS === 'android' ? 10 : 60,
+        paddingBottom: 10,
+        paddingRight: 10,
+        paddingLeft: 10,
         backgroundColor: '#00C749'
     }
 });
@@ -45,4 +48,4 @@ const mapDispatchToProps = dispatch => {
     return bindActionCreators(actionCreators, dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(SearchHeaderApple);
+export default connect(mapStateToProps, mapDispatchToProps)(HeaderHome);

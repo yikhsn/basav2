@@ -12,7 +12,7 @@ import { bindActionCreators } from 'redux';
 import axios from '../axios/axios';
 import Loader from '../components/Loader/Loader';
 
-import SearchHeaderAppleNav from '../components/SearchHeaderAppleNav/SearchHeaderAppleNav';
+import SearchHeaderAppleNav from '../components/HeaderNav/HeaderNav';
 
 class SingleLetter extends Component{
     constructor(props){

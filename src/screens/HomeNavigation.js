@@ -17,12 +17,12 @@ import * as actionCreators from '../store/actionCreator';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import SearchHeaderApple from '../components/SearchHeaderApple/SearchHeaderApple';
+import SearchHeaderApple from '../components/HeaderHome/HeaderHome';
 
 
 class Home extends Component {
     state = {
-        isLoaded: true,
+        isLoaded: false,
         letters: [
             { letter: 'A', desc: 0},
             { letter: 'B', desc: 0},

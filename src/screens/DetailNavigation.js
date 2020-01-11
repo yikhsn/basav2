@@ -14,7 +14,7 @@ import * as actionCreators from '../store/actionCreator';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import SearchHeaderAppleNav from '../components/SearchHeaderAppleNav/SearchHeaderAppleNav';
+import SearchHeaderAppleNav from '../components/HeaderNav/HeaderNav';
 
 class DetailLetter extends Component{
   

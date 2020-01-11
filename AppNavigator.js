@@ -8,10 +8,6 @@ import DetailNavigation from './src/screens/DetailNavigation';
 import DetailResult from './src/screens/DetailResult';
 import SearchScreen from './src/screens/SearchScreen';
 
-import SearchHeaderApple from './src/components/SearchHeaderApple/SearchHeaderApple';
-import SearchHeaderAppleScreen from './src/components/SearchHeaderAppleScreen/SearchHeaderAppleScreen';
-import SearchHeaderAppleNav from './src/components/SearchHeaderAppleNav/SearchHeaderAppleNav';
-
 const AppNavigator = createStackNavigator(
     {
         HomeNavigation: {

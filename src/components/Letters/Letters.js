@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import Letter from '../Letter/Letter';
+import EmptyLetter from '../EmptyLetter/EmptyLetter';
 
 export default class Letters extends Component{
     render(){
@@ -19,6 +20,8 @@ export default class Letters extends Component{
                         nextScreen={nxt}
                     />
                 ))}
+                <EmptyLetter />
+                <EmptyLetter />
             </>
         )
 
