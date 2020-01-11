@@ -17,6 +17,9 @@ import * as actionCreators from '../store/actionCreator';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
+import SearchHeaderApple from '../components/SearchHeaderApple/SearchHeaderApple';
+
+
 class Home extends Component {
     state = {
         isLoaded: true,
@@ -48,6 +51,12 @@ class Home extends Component {
             { letter: 'Y', desc: 0},
             { letter: 'Z', desc: 0},
         ]
+    }
+
+    static navigationOptions = ({ navigation }) => {
+        return {
+            header: <SearchHeaderApple navigation={navigation} />
+        }
     }
 
     async componentDidMount(){
@@ -108,7 +117,7 @@ class Home extends Component {
                             <View style={styles.letterContainer}>
                                 <View style={styles.letterContainerTitle}>
                                     <Icon name='open-book' size={20} color='#777777' style={styles.letterContainerTitleIcon} />
-                                    <Text style={styles.letterContainerTitleText}>Jelajah</Text>
+                                    <Text style={styles.letterContainerTitleText}>Jelajah Kata</Text>
                                 </View>
                                 <Letters
                                     navigation={this.props.navigation}

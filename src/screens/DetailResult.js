@@ -15,6 +15,8 @@ import { bindActionCreators } from 'redux';
 
 import axios from '../axios/axios';
 
+import SearchHeaderAppleNav from '../components/SearchHeaderAppleNav/SearchHeaderAppleNav';
+
 class DetailResult extends Component{
     constructor(props){
         super(props);
@@ -22,6 +24,12 @@ class DetailResult extends Component{
         this.state = {
             isLoaded: false,
             results : {}
+        }
+    }
+
+    static navigationOptions = ({ navigation }) => {
+        return {
+            header: <SearchHeaderAppleNav navigation={navigation} />
         }
     }
     

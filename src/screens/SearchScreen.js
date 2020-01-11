@@ -13,12 +13,20 @@ import { bindActionCreators } from 'redux';
 import SearchResultHeader from '../components/SearchResultHeader/SearchResultHeader';
 import SearchResultContent from '../components/SearchResultContent/SearchResultContent';
 
+import SearchHeaderAppleScreen from '../components/SearchHeaderAppleScreen/SearchHeaderAppleScreen';
+
 
 class SearchScreen extends Component{
     constructor(props){
         super(props);
 
         this.state = {
+        }
+    }
+
+    static navigationOptions = ({ navigation }) => {
+        return {
+            header: <SearchHeaderAppleScreen navigation={navigation} />
         }
     }
 

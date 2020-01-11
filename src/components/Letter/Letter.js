@@ -10,12 +10,13 @@ import {
 
 const { height, width } = Dimensions.get('window');
 
-const Letter = props => {    
+const Letter = props => {
     return(
         <TouchableOpacity 
             style={styles.container}
             onPress={ () => props.navigation.navigate(props.nextScreen, {
-                parentLetter: props.letter
+                parentLetter: props.letter,
+                earlierScreen: props.navigation.state.key
             })}
         >
             <Text style={ [styles.letter, { fontSize: props.size }]}>{props.letter}</Text>
@@ -26,11 +27,13 @@ const Letter = props => {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#ffffff',
-        height: (width - 16) / 4,
-        width: (width - 16) / 4,
+        backgroundColor: '#FFFFFF',
+        height: (width - 8) / 4,
+        width: (width - 8) / 4,
+        borderColor: '#eaeaea',
+        borderWidth: 1,
         // borderRadius: 5,
-        margin: 1,
+        // margin: 1,
         justifyContent: 'center',
         alignItems: 'center'
     },

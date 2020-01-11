@@ -14,6 +14,8 @@ import * as actionCreators from '../store/actionCreator';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
+import SearchHeaderAppleNav from '../components/SearchHeaderAppleNav/SearchHeaderAppleNav';
+
 class DetailLetter extends Component{
   
     state = {
@@ -22,6 +24,12 @@ class DetailLetter extends Component{
         wordList: [
 
         ]
+    }
+
+    static navigationOptions = ({ navigation }) => {
+        return {
+            header: <SearchHeaderAppleNav navigation={navigation} />
+        }
     }
 
     // contohObject = {

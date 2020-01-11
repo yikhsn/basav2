@@ -10,56 +10,31 @@ import SearchScreen from './src/screens/SearchScreen';
 
 import SearchHeaderApple from './src/components/SearchHeaderApple/SearchHeaderApple';
 import SearchHeaderAppleScreen from './src/components/SearchHeaderAppleScreen/SearchHeaderAppleScreen';
+import SearchHeaderAppleNav from './src/components/SearchHeaderAppleNav/SearchHeaderAppleNav';
 
 const AppNavigator = createStackNavigator(
     {
         HomeNavigation: {
             screen: HomeNavigation,
-            navigationOptions: {
-                // title: 'Home'
-                header: navProps => <SearchHeaderApple {...navProps}/>
-
-            },
         },
         LetterNavigation: {
             screen: LetterNavigation,
-            navigationOptions: {
-                title: 'Single Letter'
-            }
         },
+
         DetailNavigation: {
             screen: DetailNavigation,
-            navigationOptions: {
-                title: 'Detail'
-            }
         },
+
         DetailResult: {
-            screen: DetailResult,
-            navigationOptions: {
-                title: 'Result'
-            }
+            screen: DetailResult,    
         },
+
         SearchScreen: {
-            screen: SearchScreen,
-            navigationOptions: {
-                header: navProps => <SearchHeaderAppleScreen {...navProps}/>
-            }
+            screen: SearchScreen,    
         }
     },
     {
         initialRouteName: 'HomeNavigation',
-        defaultNavigationOptions: {
-            headerStyle: {
-                backgroundColor: '#00C749',
-                height: 57
-            },
-            headerTintColor: '#ffffff',
-            headerTitleStyle: {
-                color: '#ffffff',
-                fontSize: 20,
-                // fontFamily: 'Roboto-Regular',
-            },
-        }
     },
     
 )
