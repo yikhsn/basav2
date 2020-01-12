@@ -1,7 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_splash"
-    android:orientation="vertical">
-</LinearLayout>
+>
+    <LinearLayout 
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_splash"
+        android:gravity="center"
+    >
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@mipmap/icon"
+        />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:layout_marginBottom="70dp"
+    >
+        <TextView
+            android:id="@+id/simpleTextView"
+            android:layout_width="match_parent" 
+            android:layout_height="match_parent" 
+            android:text="OLEH"
+            android:layout_centerInParent="true"
+            android:textSize="16dp"
+            android:textColor="#CCCCCC"
+            android:gravity="center"
+            android:fontFamily="@font/open_sans_regular"
+            android:textStyle="bold"
+        />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:layout_marginBottom="48dp"
+    >
+        <TextView
+            android:id="@+id/simpleTextView"
+            android:layout_width="match_parent" 
+            android:layout_height="match_parent" 
+            android:text="YEEDEV STUDIO"
+            android:layout_centerInParent="true"
+            android:textSize="18dp"
+            android:textColor="#00C749"
+            android:gravity="center"
+            android:fontFamily="@font/open_sans_bold"
+            android:textStyle="bold"
+        />
+    </LinearLayout>
+
+</RelativeLayout>
