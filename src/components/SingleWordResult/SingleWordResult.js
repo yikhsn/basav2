@@ -9,7 +9,6 @@ import DefinisBox from '../DefinisiBox/DefinisiBox';
 import ContohBox from '../ContohBox/ContohBox';
 
 const SingleWordResult = (props) => {
-
     const { results } = props;
     return(
         <View style={styles.container}>

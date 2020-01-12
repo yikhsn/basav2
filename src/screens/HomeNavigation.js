@@ -1,24 +1,18 @@
 import React, { Component } from 'react';
-
 import {
     View,
     ScrollView,
     Text,
     StyleSheet
 } from 'react-native';
-
 import axios from '../axios/axios';
-
 import Letters from '../components/Letters/Letters';
 import Loader from '../components/Loader/Loader';
 import Icon from 'react-native-vector-icons/Entypo';
-
 import * as actionCreators from '../store/actionCreator';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-
 import HeaderHome from '../components/HeaderHome/HeaderHome';
-
 
 class Home extends Component {
     state = {
@@ -141,12 +135,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#eaeaea',
     }, 
     searchContainer: {
-        // backgroundColor: '#00C749',
-        // marginTop: 5,
-        // marginLeft: 5,
-        // marginRight: 5,
         paddingTop: 5,
-        // paddingBottom: 5,
         paddingLeft: 5,
         paddingRight: 5,
 

@@ -2,20 +2,15 @@ import React, { Component } from 'react';
 import{
     View,
     ScrollView,
-    TouchableOpacity,
     StyleSheet,
-    Text
 } from 'react-native';
 import * as actionCreators from '../store/actionCreator';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-
 import SearchResultHeader from '../components/SearchResultHeader/SearchResultHeader';
 import SearchResultContent from '../components/SearchResultContent/SearchResultContent';
 import Loader from '../components/Loader/Loader';
-
 import HeaderSearch from '../components/HeaderSearch/HeaderSearch';
-
 
 class SearchScreen extends Component{
     constructor(props){
@@ -41,20 +36,20 @@ class SearchScreen extends Component{
                     ?
                         <Loader />
                     :
-                            datas.searchWordList.length > 0
-                            ?
-                            <ScrollView>
-                                <View style={styles.boxResults}>
-                                    <SearchResultHeader />
+                        datas.searchWordList.length > 0
+                        ?
+                        <ScrollView>
+                            <View style={styles.boxResults}>
+                                <SearchResultHeader />
 
-                                    <SearchResultContent
-                                        searchWordList={datas.searchWordList}
-                                        navigation={navigation}
-                                        />
-                                </View>
-                            </ScrollView>
-                            :
-                                null
+                                <SearchResultContent
+                                    searchWordList={datas.searchWordList}
+                                    navigation={navigation}
+                                    />
+                            </View>
+                        </ScrollView>
+                        :
+                            null
                 }
             </View>
         )

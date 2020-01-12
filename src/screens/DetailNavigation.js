@@ -2,19 +2,15 @@ import React, { Component } from 'react';
 import {
     View,
     ScrollView,
-    Text,
     StyleSheet
 } from 'react-native';
 import WordList from '../components/WordList/WordList';
 import Loader from '../components/Loader/Loader';
-
 import axios from '../axios/axios';
-
+import HeaderNav from '../components/HeaderNav/HeaderNav';
 import * as actionCreators from '../store/actionCreator';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-
-import HeaderNav from '../components/HeaderNav/HeaderNav';
 
 class DetailLetter extends Component{
   

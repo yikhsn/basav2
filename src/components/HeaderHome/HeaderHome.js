@@ -2,11 +2,9 @@ import React, { Component } from 'react';
 import {
     View, StyleSheet, Text, Platform
 } from 'react-native';
-
 import * as actionCreators from '../../store/actionCreator';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-
 import SearchBoxOutside from '../SearchBoxOutside/SearchBoxOutside';
 
 class HeaderHome extends Component{

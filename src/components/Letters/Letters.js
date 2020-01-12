@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import Letter from '../Letter/Letter';
 import EmptyLetter from '../EmptyLetter/EmptyLetter';
 
 export default class Letters extends Component{
     render(){
-        
         const {letters, navigation, size, nextScreen } = this.props;
 
         const renderLetter = (ltrs, nvgt, sz, nxt) => (
@@ -39,7 +38,6 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         flexWrap: 'wrap',
         backgroundColor: '#FFFFFF',
-        // padding: 2,
         margin: 4
     },
 })

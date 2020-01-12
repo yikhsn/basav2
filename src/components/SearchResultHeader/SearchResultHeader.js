@@ -1,7 +1,8 @@
 import React from 'react';
 import { 
     View,
-    Text, StyleSheet
+    Text,
+    StyleSheet
 } from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
 

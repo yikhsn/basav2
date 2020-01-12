@@ -1,7 +1,5 @@
 import React from 'react';
 import { 
-    View,
-    TouchableHighlight,
     TouchableOpacity,
     Text,
     StyleSheet,
@@ -32,8 +30,6 @@ const styles = StyleSheet.create({
         width: (width - 8) / 4,
         borderColor: '#eaeaea',
         borderWidth: 1,
-        // borderRadius: 5,
-        // margin: 1,
         justifyContent: 'center',
         alignItems: 'center'
     },

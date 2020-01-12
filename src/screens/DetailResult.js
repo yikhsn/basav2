@@ -7,15 +7,12 @@ import {
 } from 'react-native';
 import MainResult from '../components/MainResult/MainResult';
 import SingleWordResult from '../components/SingleWordResult/SingleWordResult';
+import HeaderNav from '../components/HeaderNav/HeaderNav';
 import Loader from '../components/Loader/Loader';
-
 import * as actionCreators from '../store/actionCreator';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-
 import axios from '../axios/axios';
-
-import HeaderNav from '../components/HeaderNav/HeaderNav';
 
 class DetailResult extends Component{
     constructor(props){

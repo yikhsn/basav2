@@ -6,8 +6,6 @@ import {
 } from 'react-native';
 
 const MainResult = props => {
-    console.log(props);
-
     const { results } = props;
 
     return(
@@ -71,7 +69,6 @@ const styles = StyleSheet.create({
         fontSize: 50,
         marginBottom: 5,
         color: '#333333'
-
     },
     resultBox: {
         marginBottom: 15

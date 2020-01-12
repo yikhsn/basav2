@@ -2,15 +2,11 @@ import React, { Component } from 'react';
 import {
     View, StyleSheet, Text, TouchableOpacity
 } from 'react-native';
-
 import * as actionCreators from '../../store/actionCreator';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-
 import Icon from 'react-native-vector-icons/Ionicons';
-
 import axios from '../../axios/axios';
-
 import SearchBox from '../SearchBox/SearchBox';
 
 class HeaderSearch extends Component{

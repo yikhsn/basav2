@@ -2,12 +2,10 @@ import React, { Component } from 'react';
 import {
     View, StyleSheet, Text, TouchableOpacity, Platform
 } from 'react-native';
-
 import * as actionCreators from '../../store/actionCreator';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import Icon from 'react-native-vector-icons/Ionicons';
-
 import SearchBoxOutside from '../SearchBoxOutside/SearchBoxOutside';
 
 class HeaderNav extends Component{
@@ -21,22 +19,19 @@ class HeaderNav extends Component{
         return(
             <View style={styles.container}>
                 <View style={styles.navigationContainer}>
-                    {/* <View> */}
-
-                        <TouchableOpacity 
-                            style={styles.navigationButton}
-                            onPress={ () => navigation.goBack() }
-                            >
-                            <Icon style={styles.navigationIcon} name='ios-arrow-back' size={30} color='#FFFFFF' />
-                            <Text style={styles.navigationText}>Kembali</Text>
-                        </TouchableOpacity>
-                    {/* </View> */}
+                    <TouchableOpacity 
+                        style={styles.navigationButton}
+                        onPress={ () => navigation.goBack() }
+                        >
+                        <Icon style={styles.navigationIcon} name='ios-arrow-back' size={30} color='#FFFFFF' />
+                        <Text style={styles.navigationText}>Kembali</Text>
+                    </TouchableOpacity>
                 </View>
                 <View style={styles.searchBoxContainer}>
                     <SearchBoxOutside 
                         navigation={this.props.navigation}
                     />
-                    </View>
+                </View>
             </View>
         )
     }

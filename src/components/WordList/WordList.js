@@ -44,7 +44,6 @@ const styles = StyleSheet.create({
     type: {
         fontSize: 16,
         color:'#777777',
-        // color: '#00C749'
     }
 })
 
