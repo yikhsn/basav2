@@ -1,25 +1,28 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect } from 'react';
 import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
+  Platform,
   StatusBar,
 } from 'react-native';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import appReducer from './src/store/appReducer';
 import AppNavigator from './AppNavigator';
+import SplashScreen from 'react-native-splash-screen';
 
 const store = createStore(appReducer);
 
-export default class App extends Component{
-  render(){
-    return(
-      <Provider store={store}>
-        <AppNavigator />
-      </Provider>
-    )
-  }
+const App = () => {
+  
+  useEffect( () => {
+    SplashScreen.hide()
+  }, []);
+
+  return(
+    <Provider store={store}>
+      <StatusBar backgroundColor='#00C749' barStyle="light-content" />
+      <AppNavigator />
+    </Provider>
+  )
 }
+
+export default App;
