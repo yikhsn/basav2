@@ -14,7 +14,7 @@ import * as actionCreators from '../store/actionCreator';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import SearchHeaderAppleNav from '../components/HeaderNav/HeaderNav';
+import HeaderNav from '../components/HeaderNav/HeaderNav';
 
 class DetailLetter extends Component{
   
@@ -28,7 +28,7 @@ class DetailLetter extends Component{
 
     static navigationOptions = ({ navigation }) => {
         return {
-            header: <SearchHeaderAppleNav navigation={navigation} />
+            header: <HeaderNav navigation={navigation} />
         }
     }
 

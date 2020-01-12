@@ -14,7 +14,7 @@ import SearchResultHeader from '../components/SearchResultHeader/SearchResultHea
 import SearchResultContent from '../components/SearchResultContent/SearchResultContent';
 import Loader from '../components/Loader/Loader';
 
-import SearchHeaderAppleScreen from '../components/HeaderSearch/HeaderSearch';
+import HeaderSearch from '../components/HeaderSearch/HeaderSearch';
 
 
 class SearchScreen extends Component{
@@ -27,7 +27,7 @@ class SearchScreen extends Component{
 
     static navigationOptions = ({ navigation }) => {
         return {
-            header: <SearchHeaderAppleScreen navigation={navigation} />
+            header: <HeaderSearch navigation={navigation} />
         }
     }
 

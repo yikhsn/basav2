@@ -1,8 +1,6 @@
 import React from 'react';
 import {
     View,
-    TouchableOpacity,
-    Text,
     TextInput,
     StyleSheet
 } from 'react-native';
@@ -15,6 +13,7 @@ const SearchBox = (props) => {
             <TextInput
                 style={styles.inputBox}
                 autoCorrect={false}
+                underlineColorAndroid='transparent'
                 value={props.values}
                 onChangeText={ text => props.handleInputChange(text)}
                 autoFocus={true}

@@ -17,7 +17,7 @@ import * as actionCreators from '../store/actionCreator';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import SearchHeaderApple from '../components/HeaderHome/HeaderHome';
+import HeaderHome from '../components/HeaderHome/HeaderHome';
 
 
 class Home extends Component {
@@ -55,7 +55,7 @@ class Home extends Component {
 
     static navigationOptions = ({ navigation }) => {
         return {
-            header: <SearchHeaderApple navigation={navigation} />
+            header: <HeaderHome navigation={navigation} />
         }
     }
 

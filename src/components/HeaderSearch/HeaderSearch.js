@@ -59,6 +59,15 @@ class HeaderSearch extends Component{
 
     }
 
+    closeFromSearch = () => {
+        this.props.setValuesSearch('');
+
+        const wordList = [];
+        this.props.setSearchWordList(wordList);
+
+        this.props.navigation.goBack()
+    }
+
     handleInputChange = async(input) => {
         this.props.setValuesSearch(input);
         
@@ -74,10 +83,7 @@ class HeaderSearch extends Component{
                 <View style={styles.navigationContainer}>
                     <TouchableOpacity 
                         style={styles.navigationButton}
-                        onPress={ () => {
-                            this.props.navigation.goBack()
-                        } }
-                    
+                        onPress={ () => this.closeFromSearch() }
                     >
                         <Icon style={styles.navigationIcon} name='ios-arrow-back' size={30} color='#FFFFFF' />
                         <Text style={styles.navigationText}>Kembali</Text>

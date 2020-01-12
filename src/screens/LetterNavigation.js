@@ -12,7 +12,7 @@ import { bindActionCreators } from 'redux';
 import axios from '../axios/axios';
 import Loader from '../components/Loader/Loader';
 
-import SearchHeaderAppleNav from '../components/HeaderNav/HeaderNav';
+import HeaderNav from '../components/HeaderNav/HeaderNav';
 
 class SingleLetter extends Component{
     constructor(props){
@@ -54,7 +54,7 @@ class SingleLetter extends Component{
 
     static navigationOptions = ({ navigation }) => {
         return {
-            header: <SearchHeaderAppleNav navigation={navigation} />
+            header: <HeaderNav navigation={navigation} />
         }
     }
     
